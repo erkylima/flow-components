@@ -16,8 +16,8 @@ class Flow2 extends HTMLElement {
           y:1,
           label: "label",
           content: "content",
-          inputs: 1,
-          outputs: 1,
+          inputs: 2,
+          outputs: 2,
           selected: false
         };
         const node = new NodeComponent(props);      

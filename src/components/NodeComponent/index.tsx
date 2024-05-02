@@ -10,7 +10,7 @@ export interface Props {
     content: any;
     inputs: number;
     outputs: number;
-    onNodeMount?: (inputs: { offset: { x: number; y: number } }[], outputs: { offset: { x: number; y: number } }[]) => void;
+    onNodeMount: (inputs: { offset: { x: number; y: number } }[], outputs: { offset: { x: number; y: number } }[]) => void;
     onMouseDown?: (event: any) => void;
     onMouseDownOutput?: (outputIndex: number) => void;
     onMouseUpInput?: (inputIndex: number) => void;
@@ -20,8 +20,8 @@ export interface Props {
 
 export default class NodeComponent extends HTMLElement {
     props: Props;
-    private inputRefs: any[]
-    private outputRefs: any[]
+    private inputRefs: [...Array<HTMLElement>]
+    private outputRefs: [...Array<HTMLElement>]
     constructor(props:Props) {
         super();
         this.props = props;
@@ -36,6 +36,7 @@ export default class NodeComponent extends HTMLElement {
         let outputs: { offset: { x: number; y: number } }[] = [];
 
         for (let i = 0; i < this.inputRefs.length; i++) {
+            alert(this.inputRefs.length)
             inputs.push({ offset: { x: this.inputRefs[i].getBoundingClientRect().x, y: this.inputRefs[i].getBoundingClientRect().y } });
         }
 
