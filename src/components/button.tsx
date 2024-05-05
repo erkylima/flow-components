@@ -1,4 +1,4 @@
-class State extends HTMLElement{
+export class State extends HTMLElement{
   counter: number;
   constructor() {
         super();
@@ -26,7 +26,7 @@ class State extends HTMLElement{
         var newDrawer = document.createElement('button');
         newDrawer.innerText = `Decrement`;
         newDrawer.addEventListener('click', () => {
-            this.count--;        
+            this.count--;
       });
       return newDrawer;
     }
@@ -34,9 +34,9 @@ class State extends HTMLElement{
     buttonIncrement(): HTMLButtonElement{
       var newDrawer = document.createElement('button');
       newDrawer.innerText = `Increment`;
-        newDrawer.addEventListener('click', () => {
-          this.count++;
-        });
+      newDrawer.addEventListener('click', () => {
+        this.count++;
+      });
       return newDrawer;
     }
 

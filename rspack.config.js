@@ -9,7 +9,6 @@ module.exports = {
 	  main: './src/main.tsx',
 	},
 	mode:'development',
-	devtool: 'inline-cheap-module-source-map',
 	resolve: {
 		extensions: ["...", ".ts", ".tsx", ".jsx",".css"]
 	},
@@ -19,22 +18,17 @@ module.exports = {
 	module: {
 	  rules: [
 				{
-					test: /\.css$/,
-					type: "css"
-				},
-				{
 					test: /\.less$/,
 					use: [
-					  {
+					{
+						loader: 'postcss-loader',
+					},
+					{
 						loader: 'less-loader',
-					  },
+					},
 					],
 					type: 'css',
-				},
-				{
-					test: /\.module.css$/,
-					type: "css/module"
-				},
+				},				
 				{
 					test: /\.svg$/,
 					type: "asset/resource"

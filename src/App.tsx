@@ -1,13 +1,13 @@
 import './components/button'
 import './components/subflow'
-
+import './components/NodeComponent/styles.module.css'
 function Layout(): HTMLElement{
     var newDrawer = document.createElement('div');
 
     newDrawer.innerHTML = `
         <div class="container">
             <div class="sidebar">
-                <state-root></state-root>
+                
             </div>
             <div class="content">                
                 <flow2-root></flow2-root>

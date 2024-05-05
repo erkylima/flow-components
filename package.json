@@ -9,7 +9,8 @@
   "devDependencies": {
     "@rspack/cli": "0.6.3",
     "@rspack/core": "0.6.3",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "typescript-plugin-css-modules": "^5.1.0"
   },
   "dependencies": {
     "@xyflow/system": "^0.0.24"
